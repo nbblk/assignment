@@ -17,10 +17,11 @@
 5) 사용자는 햄버거 아이콘을 클릭하여, 좌측 사이드바를 나타나게 할 수 있다.
 6) 사용자가 백그라운드 영역을 탭하면 좌측 사이드바가 사라지게 할 수 있다.
 
-### 3. 컴포넌트 및 상태 목록
-- Background: { isActive: boolean }
+### 3. 컴포넌트 설계 및 상태 목록
+- Background
 - Header 
-  - Hamburger: { isActive: boolean }
+  - Hamburger
+  - Divider
   - Logo 
   - Links
     - Link
@@ -28,25 +29,24 @@
   - Divideline
   - Menu
     - Item   
-- Main: { processes: String[], ingredients: String[], isFiltered: boolean, isToggleOn: boolean }
+- Main: { methods: CheckOption[], materials: CheckOption[], dropdown: { methods: boolean, materials: boolean }, isHamburgerClicked: boolean, isFiltered: boolean, isToggleOn: boolean, isBackdropOn: boolean, items: [] }
   - Title
   - Subtitle
   - Dropdown
     - Checklist: 
-      - Checkbox: isChecked: boolean, value: string
   - Reset   
   - ToggleSwitch
-    - Circle
-    - Bar      
- - List: { cards: Card[] }
-  - Card: { subject: string, client: string, deadline: string, isBadged: boolean, badgeValue: string, content: { fieldname: string, value: string } }
+ - List
+  - Card
     - Header   
-      - Subject
-      - Client
-      - Deadline
       - Badge
     - Divideline
     - Content
     - Footer
-      - Button (x2)
-      
+
+### 4. 사용 기술
+react(create-react-app), typescript, material-ui, styled-components
+
+### 5. 테스트 방법
+`npm install` 후 `npm start`를 통해 로컬에서 구동 가능
+
